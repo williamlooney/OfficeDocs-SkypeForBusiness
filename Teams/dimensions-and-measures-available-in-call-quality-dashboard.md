@@ -494,7 +494,7 @@ The table above lists possible reasons why a dimension may be blank. Many dimens
 
 ## Measurements
 
-Many Measurement values can also be used as filters. The following table lists the measurements currently available in CQD, shown in the order listed in the Query Editor:
+The following table lists the measurements currently available in CQD, shown in the order listed in the Query Editor. 
 
 |Measure Name |Units |Description |
 |:--- |:--- |:--- |
@@ -684,6 +684,29 @@ Many Measurement values can also be used as filters. The following table lists t
 |PSTN NER Good Percentage | Percentage | The NER measures the ability of a network to deliver calls by measuring the number of calls sent versus the number of calls delivered to a recipient.<br/>NER = (Answered calls + User Busy + Ring no Answer + Terminal Reject Seizures）/ Total Attempt Calls x 100|
 ||||
 
+### Notes on error in measures
+To compute certain measures requires performing a distinct countif operation on the data set defined by the filters applied. This distinct countif operation has an upto 0.2% error when performing this count. This results in an upto 0.2% error for the following measures:
+- Audio SLA Good Call Count
+- Audio SLA Poor Call Count
+- Audio SLA Call Count
+- Audio Call Count
+- Audio Poor Call Count
+- Audio Good Call Count
+- Audio Unclassified Call Count
+- Audio Poor Call Percentage
+- First User Count
+- Second User Count
+
+- PSTN Total Attempts Count
+- PSTN Total Connected Count
+- PSTN Inbound Attempts Count
+- PSTN Inbound Connected Count
+- PSTN Outbound Attempts Count
+- PSTN Outbound Connected Count
+- PSTN Average Call Duration
+- PSTN Active User Count
+- PSTN Total Inbound Concurrent Call Count
+- PSTN Total Outbound Concurrent Call Count
 ## Filters
 
 Many Dimension and Measurement values can also be used as filters. You can use filters in your query to eliminate information in the same way you'd select a Dimension or Measurement to add or include information in the query.
